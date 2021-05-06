@@ -5,17 +5,30 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Views from "./components/views";
 
 function App() {
+  const gotoTaken = (e) => {
+    e.preventDefault();
+    window.location.href = '/talent';
+  }
+
+  const gotoFan = (e) => {
+    e.preventDefault();
+    window.location.href = '/fan';
+  }
+
+  const anchorStyle = {
+    cursor: 'pointer'
+  }
   return (
     <div className="App">
       <div className="navigation">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link active" href="/talent">
+            <a style={anchorStyle} class="nav-link active" onClick={(e) => gotoTaken(e)}>
               Talent SignUp
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/fan">
+            <a style={anchorStyle} class="nav-link" onClick={(e) => gotoFan(e)}>
               Fan SignUp
             </a>
           </li>
